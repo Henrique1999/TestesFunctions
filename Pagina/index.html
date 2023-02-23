@@ -29,15 +29,8 @@
   
     <div>>>><br/><br/>
       <label>Criando a slider:</label>
-      <div>
-        <!-- 
-        3 partes
-          1: corredor
-          2: identificador de cada ponto 
-          3: ponto do valor minimo
-          4: ponto do valor maximo
-        -->
-      </div>
+      <p id="ancora4">
+      </p>
       >>>
     </div>
   
@@ -46,16 +39,27 @@
 
 
   <script>
-    document.getElementById("ancora1").innerHTML = numeros;
+    console.log(JSONnumeros.valores);
+    document.getElementById("ancora1").innerHTML = JSONnumeros.valores;
     /*  */
-    function compareNumbers(a, b) {
-      return a - b;
-    };
-    numeros.sort(compareNumbers);
-    document.getElementById("ancora2").innerHTML = numeros;
+    JSONnumeros.valores.sort(function(a, b){return a - b});
+    document.getElementById("ancora2").innerHTML = JSONnumeros.valores;
     /*  */
-    document.getElementById("ancora3").innerHTML = 1;
-    document.getElementById("ancora3-2").innerHTML = 10;
+    document.getElementById("ancora3").innerHTML = JSONnumeros.valores[0];
+    document.getElementById("ancora3-2").innerHTML = JSONnumeros.valores[JSONnumeros.valores.length - 1];
+    /*  */
+    function GerandoResultadoComMINeMAX(ValorMinimo, ValorMaximo) {
+      let Resultado = [];
+      JSONnumeros.valores.forEach(element => {
+        if (element > ValorMinimo && element < ValorMaximo) {
+          Resultado.push(element);
+        }
+      });
+      return Resultado;
+    }
+
+
+    document.getElementById("ancora4").innerHTML = GerandoResultadoComMINeMAX(10, 30)
     /*  */
   </script>
 </body>
