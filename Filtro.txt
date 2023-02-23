@@ -1,0 +1,50 @@
+Arquivo de dedicado a descrição do serviço "Filtro"
+
+--Conceito do Filtro:
+Intervalos:
+  • Exibe opções de intervalo com base em valores ja coletados na exibição do site.
+//////Observações:
+  são 500 atm, as variações de valores podem variar muito. ou seja precisa delimitar como acessar todos os valores sem poluir visualmente
+
+  O valor maximo da range irá variar de acordo com o tamanho planejado para exibição porem poderá haver mais opções de valores e isso deve habilitar uma função manual
+
+
+//////Como funcionará o filtro?
+O que será trabalhado?:
+  •Valores Numericos atomicos;
+  •Textos status não pre-definidos, apenas os coletados na hora do registro do site;
+  •Data e Horario;
+
+
+>.Pré-filtro:
+Entrada:
+  •Array com informações atomicas; (Numeros inteiros)
+  •Array com definidas em coleta; (Versão de chaves, avisos e alertas)
+  •(Data e Horario precisa de uma forma atomica para o calculo doque vem na frente e o que vem depois);
+
+Processamento:
+  1> 
+  •Recebe os valores atomicos;
+  •Organiza eles de forma crescente;
+  •Seleciona o menor valor e o maior valor;
+  •Gera uma slider de tamanho fixo com o começo da largura sendo o valor minimo e o fim da largura ser o valor maximo e ordena o resto;
+  2>
+  •;
+  •;
+  •;
+  •;
+
+Exibição:
+  1>
+  •Exibe a slider;
+  •;
+  •;
+  •;
+  •;
+  •;
+  •;
+  •;
+
+>.Pos-filtro:
+
+

@@ -1,0 +1,25 @@
+p {
+  overflow-wrap: break-word;
+}
+
+.Corredor {
+  display: inline-flex;
+  align-items: center;
+
+  width: 218px;
+  height: 20px;
+  background-color: #9ce79cb9;
+  overflow: hidden;
+}
+
+#pontomenor{
+  width: 18px;
+  height: 18px;
+  background-color:blue;
+}
+
+#pontomaior{
+  width: 18px;
+  height: 18px;
+  background-color:crimson;
+}

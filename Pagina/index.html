@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1° Filtro</title>
+  <script src="valores.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>   
+  <div>>>><br/><br/>
+    <label>Todos os numeros recebidos:</label>
+    <p id="ancora1"></p>
+    >>>
+  </div>
+
+  <div>>>><br/><br/>
+    <label>Ordenando os numeros:</label>
+    <p id="ancora2"></p>
+    >>>
+  </div>
+  
+  <div>>>>
+    <p>➖Menor numero: <label id="ancora3"></label></p>
+    <p>➕Maior numero: <label id="ancora3-2"></label></p>
+    >>>
+  </div>
+  
+    <div>>>><br/><br/>
+      <label>Criando a slider:</label>
+      <div>
+        <!-- 
+        3 partes
+          1: corredor
+          2: identificador de cada ponto 
+          3: ponto do valor minimo
+          4: ponto do valor maximo
+        -->
+      </div>
+      >>>
+    </div>
+  
+  
+
+
+
+  <script>
+    document.getElementById("ancora1").innerHTML = numeros;
+    /*  */
+    function compareNumbers(a, b) {
+      return a - b;
+    };
+    numeros.sort(compareNumbers);
+    document.getElementById("ancora2").innerHTML = numeros;
+    /*  */
+    document.getElementById("ancora3").innerHTML = 1;
+    document.getElementById("ancora3-2").innerHTML = 10;
+    /*  */
+  </script>
+</body>
+</html>
