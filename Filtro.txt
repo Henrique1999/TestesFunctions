@@ -27,6 +27,7 @@ Processamento:
   •Recebe os valores atomicos;
   •Organiza eles de forma crescente;
   •Seleciona o menor valor e o maior valor;
+  •Cria a função de filtrar;
   •Gera uma slider de tamanho fixo com o começo da largura sendo o valor minimo e o fim da largura ser o valor maximo e ordena o resto;
   2>
   •;
