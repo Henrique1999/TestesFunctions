@@ -49,3 +49,11 @@ Exibição:
 >.Pos-filtro:
 
 
+
+
+
+
+Verificar o codigo para elemento arrastavel: 
+
+
+https://www.w3schools.com/howto/howto_js_draggable.asp
