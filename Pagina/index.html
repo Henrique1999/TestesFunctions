@@ -27,14 +27,28 @@
     >>>
   </div>
   
-    <div>>>><br/><br/>
-      <label>Criando a slider:</label>
-      <p id="ancora4">
-      </p>
-      >>>
+  <div>>>><br/><br/>
+    <label>Criando a função filtrar: (Usando entre 10 a 30 no momento)</label>
+    <p id="ancora4">
+    </p>
+    >>>
+  </div>
+
+  <div>>>><br/><br/>
+    <label>Criando a slider:</label>
+    <p id="ancora5">
+    </p>
+    >>>
+  </div>
+
+  <div class="criandoSlider">
+    <p>Visualização do slider</p>
+    <div class="slider">
+      <div class="Bolas"></div>
+      <div class="Caminho"></div>
+      <div class="Limites"></div>
     </div>
-  
-  
+  </div>
 
 
 
@@ -51,15 +65,15 @@
     function GerandoResultadoComMINeMAX(ValorMinimo, ValorMaximo) {
       let Resultado = [];
       JSONnumeros.valores.forEach(element => {
-        if (element > ValorMinimo && element < ValorMaximo) {
+        if (element >= ValorMinimo && element <= ValorMaximo) {
           Resultado.push(element);
         }
       });
       return Resultado;
     }
-
-
-    document.getElementById("ancora4").innerHTML = GerandoResultadoComMINeMAX(10, 30)
+    document.getElementById("ancora4").innerHTML = GerandoResultadoComMINeMAX(10, 30);
+    /*  */
+    document.getElementById("ancora5").innerHTML = "Montando";
     /*  */
   </script>
 </body>
