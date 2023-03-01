@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Filtro de textos</title>
+  <script src="valores.js"></script>
+</head>
+<body>
+  <div>
+    >>>><br/><br/>
+    <p>Todos os valores recebidos</p>
+    <p id="ancora1"></p>
+    >>>>
+  </div>
+ 
+  <div>
+    >>>><br/><br/>
+    <p>Ordenados:</p>
+    <p id="ancora2"></p>
+    >>>>
+  </div>
+
+
+
+  <script>
+    document.getElementById("ancora1").innerHTML = JSONenviado.valores
+    /*  */
+    
+    function Comparar() {
+      let exist = false;
+      let ValoresUnicos = [];
+      let MedidaValoresUnicos = [];
+      let quantidade = 1;
+      
+      JSONenviado.valores.forEach(elementInicial => {
+        exist = false;
+        quantidade = 1;
+        ValoresUnicos.forEach(elementFinal => {
+          if (elementInicial == elementFinal.fruta) {
+            exist = true;
+            elementFinal.quantidade++;
+          }
+        });
+        if (!exist) {
+          ValoresUnicos.push({
+            "fruta" : elementInicial,
+            "quantidade" : quantidade
+          })
+        }
+      });
+      return ValoresUnicos;
+    }
+    console.log(Comparar());
+    var retorne = "";
+    Comparar().forEach(element => {
+      retorne += element.fruta + " foi vista " + element.quantidade +" vezes <br/>";
+    });
+    document.getElementById("ancora2").innerHTML = retorne;
+    /*  */
+    
+    /*  */
+    
+    /*  */
+    
+    /*  */
+    </script>
+</body>
+</html>
