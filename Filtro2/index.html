@@ -32,18 +32,20 @@
       let exist = false;
       let ValoresUnicos = [];
       
-      JSONenviado.valores.forEach(elementInicial => {
+      JSONenviado.valores.forEach((elementInicial, index) => {
         exist = false;
         ValoresUnicos.forEach(elementFinal => {
           if (elementInicial == elementFinal.fruta) {
             exist = true;
             elementFinal.quantidade++;
+            elementFinal.indexs.push(index)
           }
         });
         if (!exist) {
           ValoresUnicos.push({
             "fruta" : elementInicial,
-            "quantidade" : 1
+            "quantidade" : 1,
+            "indexs" : [index]
           })
         }
       });
@@ -52,7 +54,7 @@
     console.log(Comparar());
     var retorne = "";
     Comparar().forEach(element => {
-      retorne += element.fruta + " foi vista " + element.quantidade +" vezes <br/>";
+      retorne += element.fruta + " foi vista " + element.quantidade + " vezes nos elementos " + element.indexs + "<br/>";
     });
     document.getElementById("ancora2").innerHTML = retorne;
     /*  */
