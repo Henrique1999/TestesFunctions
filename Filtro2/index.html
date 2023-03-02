@@ -31,12 +31,9 @@
     function Comparar() {
       let exist = false;
       let ValoresUnicos = [];
-      let MedidaValoresUnicos = [];
-      let quantidade = 1;
       
       JSONenviado.valores.forEach(elementInicial => {
         exist = false;
-        quantidade = 1;
         ValoresUnicos.forEach(elementFinal => {
           if (elementInicial == elementFinal.fruta) {
             exist = true;
@@ -46,7 +43,7 @@
         if (!exist) {
           ValoresUnicos.push({
             "fruta" : elementInicial,
-            "quantidade" : quantidade
+            "quantidade" : 1
           })
         }
       });
