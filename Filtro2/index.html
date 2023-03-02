@@ -21,17 +21,28 @@
     <p id="ancora2"></p>
     >>>>
   </div>
+ 
+  <div>
+    >>>><br/><br/>
+    <p>Escolha qual valor vc deseja analisar:</p>
+    <select name="valores" id="Selecaodevalor">
+    </select>
+    <button id="Execute">Testar</button>
+    <div id="Exibir"></div>
+    >>>>
+  </div>
 
 
 
   <script>
     document.getElementById("ancora1").innerHTML = JSONenviado.valores
     /*  */
+    let ValoresUnicos = [];
     
     function Comparar() {
+      ValoresUnicos = [];
       let exist = false;
-      let ValoresUnicos = [];
-      
+      let VariaveisParaComparar = "";
       JSONenviado.valores.forEach((elementInicial, index) => {
         exist = false;
         ValoresUnicos.forEach(elementFinal => {
@@ -49,16 +60,56 @@
           })
         }
       });
+      ValoresUnicos.forEach(element => {
+        VariaveisParaComparar += element;
+      });
+
       return ValoresUnicos;
     }
-    console.log(Comparar());
+    Comparar();
     var retorne = "";
-    Comparar().forEach(element => {
+    console.log(ValoresUnicos);
+    ValoresUnicos.forEach(element => {
       retorne += element.fruta + " foi vista " + element.quantidade + " vezes nos elementos " + element.indexs + "<br/>";
     });
     document.getElementById("ancora2").innerHTML = retorne;
     /*  */
-    
+
+    function RetornarSelecionado(params) {
+      let Saida = []
+      ValoresUnicos.forEach(element => {
+        if (params == element.fruta) {
+          Saida.push(element.indexs);
+        }
+      });
+      Saida
+      return Saida;
+    }
+
+    function CriarOptions() {
+      let Saida = "";
+      ValoresUnicos.forEach(element => {
+        Saida += '<option value="'+ element.fruta +'">'+ element.fruta +'</option>';
+      });
+      return Saida;
+    }
+    document.getElementById("Selecaodevalor").innerHTML = CriarOptions();
+    document.getElementById("Execute").addEventListener("mousedown", (e) => {
+      let SelecionadoExecute;
+      ValoresUnicos.forEach(element => {
+        if (document.getElementById("Selecaodevalor").value == element.fruta) {
+          SelecionadoExecute = element.indexs;
+        }
+      });
+      let Exibir = "";
+      for (let contadorSelecionado = 0; contadorSelecionado < SelecionadoExecute.length; contadorSelecionado++) {
+        const Selecao = SelecionadoExecute[contadorSelecionado];
+        Exibir = Exibir +"index "+ SelecionadoExecute[contadorSelecionado] + " contem o " + JSONenviado.valores[Selecao] + "<br/>";
+      }
+      document.getElementById("Exibir").innerHTML = Exibir;
+    });
+
+
     /*  */
     
     /*  */
