@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>1° Filtro</title>
+  <script src="valores.js"></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>   
+  <div>>>><br/><br/>
+    <label>Todos os numeros recebidos:</label>
+    <p id="ancora1"></p>
+    >>>
+  </div>
+
+  <div>>>><br/><br/>
+    <label>Ordenando os numeros:</label>
+    <p id="ancora2"></p>
+    >>>
+  </div>
+  
+  <div>>>>
+    <p>➖Menor numero: <label id="ancora3"></label></p>
+    <p>➕Maior numero: <label id="ancora3-2"></label></p>
+    >>>
+  </div>
+  
+  <div>>>><br/><br/>
+    <label>Criando a função filtrar: (Usando entre 10 a 30 no momento)</label>
+    <p id="ancora4">
+    </p>
+    >>>
+  </div>
+
+  <div>>>><br/><br/>
+    <label>Criando a slider:</label> <br/>
+    <input type="number" name="ValorMin" id="vlrMin">
+    <span>" - "</span>
+    <input type="number" name="ValorMax" id="vlrMax">
+    <button id="FiltrarButton">Filtrar</button> <br>
+    <p id="ancora5">
+    </p>
+    >>>
+  </div>
+
+
+
+  <script>
+    console.log(JSONnumeros.valores);
+    document.getElementById("ancora1").innerHTML = JSONnumeros.valores;
+    /*  */
+    JSONnumeros.valores.sort(function(a, b){return a - b});
+    document.getElementById("ancora2").innerHTML = JSONnumeros.valores;
+    /*  */
+    document.getElementById("ancora3").innerHTML = JSONnumeros.valores[0];
+    document.getElementById("ancora3-2").innerHTML = JSONnumeros.valores[JSONnumeros.valores.length - 1];
+    /*  */
+    function GerandoResultadoComMINeMAX(ValorMinimo, ValorMaximo) {
+      let Resultado = [];
+      JSONnumeros.valores.forEach(element => {
+        if (element >= ValorMinimo && element <= ValorMaximo) {
+          Resultado.push(element);
+        }
+      });
+      return Resultado;
+    }
+    document.getElementById("ancora4").innerHTML = GerandoResultadoComMINeMAX(10, 30);
+    /*  */
+    document.getElementById("FiltrarButton").addEventListener("click", (event) => filtrar())
+    function filtrar(event) {
+      document.getElementById("ancora5").innerHTML = GerandoResultadoComMINeMAX(document.getElementById("vlrMin").value, document.getElementById("vlrMax").value);
+    }
+    
+    /*  */
+
+    /*  */
+  </script>
+</body>
+</html>
